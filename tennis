@@ -1,0 +1,27 @@
+ballX = 0
+ballY = 0
+ballXSpeed = -2
+ballYSpeed = 2
+def setup ():
+    size(1000, 620)
+    global ballX,ballY
+    ballX = width/2
+    ballY = height/2
+def draw ():
+    global ballX,ballY,ballXSpeed,ballYSpeed
+    ballX += ballXSpeed
+    ballY += ballYSpeed
+    if ballX <=0 :
+        ballXSpeed = -ballXSpeed
+    if ballX >= width :
+        ballXSpeed = -ballXSpeed
+    if ballY <=0 :
+        ballYSpeed = -ballYSpeed
+    if ballY > height - 10 :
+        ballYSpeed = -ballYSpeed
+    rect (10, 10, 980, 600)
+    line (500, 10, 500, 610)
+    rect (0, 230, 50, 100)
+    ellipse (ballX, ballY, -50, -50)
+    triangle (500, 20, 490, 10, 510, 10)
+    triangle (500, 600, 490, 610, 510, 610)
